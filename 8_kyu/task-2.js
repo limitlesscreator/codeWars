@@ -9,6 +9,7 @@ let arrayofnumbers = arrayofnumbestext.map(t => {
     }
     else if (t >= 5){
         return ('1')
+
     }
     else {
         return t
