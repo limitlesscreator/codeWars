@@ -123,11 +123,104 @@
         arr[i] = Number(arr[i])
         if (arr[i] < 0 && arr[i] < min) {
             min = arr[i]
-        } else if (arr[i] > 0 &&  max < arr[i]) {
+        } else if (arr[i] > 0 && max < arr[i]) {
             max = arr[i]
         }
     }
     let result = `${min} ${max}`
     console.log(result)
 
+}
+
+
+// {
+//     console.clear()
+//     // Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+//     //
+//     // Examples:
+//     // Input: 42145 Output: 54421
+//     //
+//     // Input: 145263 Output: 654321
+//     //
+//     // Input: 123456789 Output: 987654321
+//     let numbers = 155235
+//     let arr = String(numbers).split('')
+//
+//     for (let i = 0; i < arr.length; i++){
+//         if (typeof arr[i] === "string"){
+//             arr[i] = Number(arr[i])
+//         }
+//     }
+//     let min = 100000
+//     let max = 0
+//
+//     for (i = 0 ; i < arr.length; i++){
+//         if (arr[i] <= min){
+//             min = arr[i]
+//         }
+//         else if (arr[i] >= max){
+//             max = arr[i]
+//         }
+//     }
+//     console.log(min,max)
+//
+//     console.log(arr)
+// } dosnt work:( ------------------------------
+
+{
+    console.log('hi')
+    let a = 25.12312
+    let result
+    let b = Math.round(a ** 0.5) ? result = true : result = false
+    console.log(result)
+}
+{
+    // In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+    //
+    // Example
+    // filter_list([1,2,'a','b']) == [1,2]
+    // filter_list([1,'a','b',0,15]) == [1,0,15]
+    // filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
+
+    let arr = [1, 2, 'a', 'b']
+    let sortNumber = []
+
+
+    // for (i = 0; i < arr.length;i++){
+    //     if (typeof arr[i] === 'number'){
+    //         sortNumber.push(arr[i])
+    //     }
+    // }
+    let sort = arr.filter(n => {
+        return typeof n === 'number'
+    })
+    console.log(sort)
+}
+{
+    // Examples
+    // removeSmallest([1,2,3,4,5]) = [2,3,4,5]
+    // removeSmallest([5,3,2,1,4]) = [5,3,2,4]
+    // removeSmallest([2,2,1,2,1]) = [2,2,2,1]
+    console.clear()
+    let arr = [2, 2, 1, 4, 5, 1]
+    let min = [arr[0]]
+    let total = 0
+    let sortArr = []
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < min) {
+            min = arr[i]
+        }
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== min) {
+            sortArr.push(arr[i])
+
+        } else if (arr[i] === min && total === 1) {
+            sortArr.push(arr[i])
+        } else if (arr[i] === min) {
+            total++
+        }
+
+    }
+    console.log(sortArr)
 }
