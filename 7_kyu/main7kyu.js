@@ -224,3 +224,113 @@
     }
     console.log(sortArr)
 }
+// {
+//     console.clear()
+//     // Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+//     //
+//     // Examples:
+//     // Input: 42145 Output: 54421
+//     //
+//     // Input: 145263 Output: 654321
+//     //
+//     // Input: 123456789 Output: 987654321
+//     let numbers = 155235
+//     let arr = String(numbers).split('')
+//
+//     for (let i = 0; i < arr.length; i++){
+//         if (typeof arr[i] === "string"){
+//             arr[i] = Number(arr[i])
+//         }
+//     }
+//     let min = 100000
+//     let max = 0
+//
+//     for (i = 0 ; i < arr.length; i++){
+//         if (arr[i] <= min){
+//             min = arr[i]
+//         }
+//         else if (arr[i] >= max){
+//             max = arr[i]
+//         }
+//     }
+//     console.log(min,max)
+//
+//     console.log(arr)
+// } dosnt work:( ------------------------------
+// let arr = [10, 343445353, 3453445, 3453545353453]
+//
+// let firstNumber = arr[0]
+// let secondNumber = arr[0]
+//
+// let deleted = 0
+//
+// for (let i = 0; i < arr.length; i++){
+//     if (arr[i] < firstNumber){
+//         if (deleted === 0){
+//             firstNumber = arr[i]
+//             deleted++
+//             arr.splice(i,1)
+//         }
+//     }
+// }
+// for (let i = 0; i<arr.length; i++){
+//     if (arr[i] < secondNumber){
+//         secondNumber = arr[i]
+//     }
+// }
+//
+// console.log(firstNumber + ' first number')
+// console.log(secondNumber + " second number")
+// console.log(firstNumber + secondNumber)
+// dosnt work...
+
+
+// // 68,6%
+// Create a function that returns the sum of the two lowest positive numbers given an array of
+// minimum 4 positive integers. No floats or non-positive integers will be passed.
+//
+//     For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
+//
+//     [10, 343445353, 3453445, 3453545353453] should return 3453455.
+
+// for (let i = 0; i < arr.length; i++){
+//     if (arr[i] < secondNumber){
+//         secondNumber = arr[i]
+//     }
+// }
+console.clear()
+
+    // [10, 343445353, 3453445, 3453545353453] should return 3453455
+
+let numbers = [52, 76, 14, 12, 4]
+
+let first = numbers[0]
+let second = numbers[1]
+let deletedIndex = 0
+
+for (let i = 0; i < numbers.length; i++){
+    if (numbers[i] < first){
+        first = numbers[i]
+        deletedIndex = i
+    }
+}
+numbers.splice(deletedIndex,1)
+console.log(deletedIndex + " deleted index")
+console.log(first + "first number")
+console.log(second + "second numbers")
+console.log(numbers + " all numbers")
+
+for (let i = 0; i < numbers.length; i++){
+    if (numbers[i] < second){
+        second = numbers[i]
+    }
+}
+console.log(second)
+console.log(first + second)
+
+// or
+const first = numbers.sort((a, z) => a - z)[0];
+const second = numbers.sort((a, z) => a - z)[1];
+final =  first + second
+
+//
