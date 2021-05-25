@@ -300,37 +300,157 @@
 // }
 console.clear()
 
-    // [10, 343445353, 3453445, 3453545353453] should return 3453455
+{        let numbers = [52, 76, 14, 12, 4]
+    let first = numbers[0]
+    let second = numbers[1]
+    let deletedIndex = 0
 
-let numbers = [52, 76, 14, 12, 4]
-
-let first = numbers[0]
-let second = numbers[1]
-let deletedIndex = 0
-
-for (let i = 0; i < numbers.length; i++){
-    if (numbers[i] < first){
-        first = numbers[i]
-        deletedIndex = i
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] < first) {
+            first = numbers[i]
+            deletedIndex = i
+        }
     }
-}
-numbers.splice(deletedIndex,1)
-console.log(deletedIndex + " deleted index")
-console.log(first + "first number")
-console.log(second + "second numbers")
-console.log(numbers + " all numbers")
+    numbers.splice(deletedIndex, 1)
+    console.log(deletedIndex + " deleted index")
+    console.log(first + "first number")
+    console.log(second + "second numbers")
+    console.log(numbers + " all numbers")
 
-for (let i = 0; i < numbers.length; i++){
-    if (numbers[i] < second){
-        second = numbers[i]
+    for (let i = 0; i < numbers.length; i++) {
+        if (numbers[i] < second) {
+            second = numbers[i]
+        }
     }
+    console.log(second)
+    console.log(first + second)}
+{
+    let numbers = [52, 76, 14, 12, 4]
+    const first = numbers.sort((a, z) => a - z)[0];
+    const second = numbers.sort((a, z) => a - z)[1];
+    final = first + second
 }
-console.log(second)
-console.log(first + second)
 
-// or
-const first = numbers.sort((a, z) => a - z)[0];
-const second = numbers.sort((a, z) => a - z)[1];
-final =  first + second
+console.clear()
 
+
+// In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
 //
+//     Example:
+//
+// highAndLow("1 2 3 4 5");  // return "5 1"
+// highAndLow("1 2 -3 4 5"); // return "5 -3"
+// highAndLow("1 9 3 4 -5"); // return "9 -5"
+// Notes:
+//
+//     All numbers are valid Int32, no need to validate them.
+//     There will always be at least one number in the input string.
+//     Output string must be two numbers separated by a single space, and highest number is first.
+
+{
+    let numbers = "4 5 29 54 4 0 -214 542 -64 1 -3 6 -6"
+    numberNumMin = numbers.split(' ').map(n => +n).sort((a,z) => a - z)[0]
+    numberNumMax = numbers.split(' ').map(n => +n).sort((a,z) => a - z)
+    numberNumMax = numberNumMax[numberNumMax.length - 1]
+    console.log(numberNumMin.toString())
+    console.log(numberNumMax.toString() + " " + numberNumMin.toString())
+}
+// 89,3
+{
+    console.clear()
+
+    // Given a sequence of numbers, find the largest pair sum in the sequence.
+    //
+    // For example
+    //
+    // [10, 14, 2, 23, 19] -->  42 (= 23 + 19)
+    // [99, 2, 2, 23, 19]  --> 122 (= 99 + 23)
+    // Input sequence contains minimum two elements and every element is an integer
+    let arr = [10, 14, 2, 23, 19]
+    let first = arr.sort((a,z) => z - a)[0]
+    let second = arr.sort((a,z) => z - a)[1]
+    console.log(first+second)
+}
+//94,6
+{
+    console.clear()
+    // You might know some pretty large perfect squares. But what about the NEXT one?
+    //
+    // Complete the findNextSquare method that finds the next integral perfect square after the one
+    // passed as a parameter. Recall that an integral perfect square is an integer n such that sqrt(n) is also an integer.
+    //
+    // If the parameter is itself not a perfect square then -1 should be returned. You may assume the parameter is non-negative.
+    //
+    // Examples:
+    //
+    // findNextSquare(121) --> returns 144
+    // findNextSquare(625) --> returns 676
+    // findNextSquare(114) --> returns -1 since 114 is not a perfect square
+    let sq = 15241383936
+    // console.log(sq ** 0.5 % 2)
+
+
+
+    if (Number.isInteger(sq ** 0.5 % 10) || sq** 0.5 % 2 === 0){
+        sq++
+        while (sq ** 0.5 % 2 === 0){
+            sq++
+            console.log(sq)
+        }
+    }
+    else {
+        console.log('wrong output')
+    }
+
+}
+
+
+{
+    console.clear()
+// если тру то возвращаем ближайшее новое, если фалс то возвращаем -1
+    let sq = 122;//целый корень?
+    let truth = Number.isInteger(sq ** 0.5)
+    if (truth)
+    {
+        sq++
+        for (let i = 0; Number.isInteger(sq ** 0.5) !== true;i++){
+            sq++
+        }
+    }
+    else {
+        console.log('end')
+    }
+
+
+}
+
+
+
+
+
+
+
+
+// let sq = 121;//целый корень?
+// sq++
+// for (let i = 0; Number.isInteger(sq ** 0.5) !== true;i++){
+//     sq++
+// }
+// console.log(sq)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
