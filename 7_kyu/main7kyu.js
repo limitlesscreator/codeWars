@@ -300,7 +300,8 @@
 // }
 console.clear()
 
-{        let numbers = [52, 76, 14, 12, 4]
+{
+    let numbers = [52, 76, 14, 12, 4]
     let first = numbers[0]
     let second = numbers[1]
     let deletedIndex = 0
@@ -323,7 +324,8 @@ console.clear()
         }
     }
     console.log(second)
-    console.log(first + second)}
+    console.log(first + second)
+}
 {
     let numbers = [52, 76, 14, 12, 4]
     const first = numbers.sort((a, z) => a - z)[0];
@@ -349,8 +351,8 @@ console.clear()
 
 {
     let numbers = "4 5 29 54 4 0 -214 542 -64 1 -3 6 -6"
-    numberNumMin = numbers.split(' ').map(n => +n).sort((a,z) => a - z)[0]
-    numberNumMax = numbers.split(' ').map(n => +n).sort((a,z) => a - z)
+    numberNumMin = numbers.split(' ').map(n => +n).sort((a, z) => a - z)[0]
+    numberNumMax = numbers.split(' ').map(n => +n).sort((a, z) => a - z)
     numberNumMax = numberNumMax[numberNumMax.length - 1]
     console.log(numberNumMin.toString())
     console.log(numberNumMax.toString() + " " + numberNumMin.toString())
@@ -367,9 +369,9 @@ console.clear()
     // [99, 2, 2, 23, 19]  --> 122 (= 99 + 23)
     // Input sequence contains minimum two elements and every element is an integer
     let arr = [10, 14, 2, 23, 19]
-    let first = arr.sort((a,z) => z - a)[0]
-    let second = arr.sort((a,z) => z - a)[1]
-    console.log(first+second)
+    let first = arr.sort((a, z) => z - a)[0]
+    let second = arr.sort((a, z) => z - a)[1]
+    console.log(first + second)
 }
 //94,6
 {
@@ -390,61 +392,185 @@ console.clear()
     // console.log(sq ** 0.5 % 2)
 
 
-
-    if (Number.isInteger(sq ** 0.5 % 10) || sq** 0.5 % 2 === 0){
+    if (Number.isInteger(sq ** 0.5 % 10) || sq ** 0.5 % 2 === 0) {
         sq++
-        while (sq ** 0.5 % 2 === 0){
+        while (sq ** 0.5 % 2 === 0) {
             sq++
             console.log(sq)
         }
-    }
-    else {
+    } else {
         console.log('wrong output')
     }
 
 }
-
-
 {
     console.clear()
 // если тру то возвращаем ближайшее новое, если фалс то возвращаем -1
     let sq = 122;//целый корень?
     let truth = Number.isInteger(sq ** 0.5)
-    if (truth)
-    {
+    if (truth) {
         sq++
-        for (let i = 0; Number.isInteger(sq ** 0.5) !== true;i++){
+        for (let i = 0; Number.isInteger(sq ** 0.5) !== true; i++) {
             sq++
         }
-    }
-    else {
+    } else {
         console.log('end')
     }
 
 
 }
+console.clear()
+console.log('work')
 
 
+{
+//     A square of squares
+//     You like building blocks. You especially like building blocks that are squares. And what you even like more, is to arrange them into a square of square building blocks!
+//     However, sometimes,
+//     you can't arrange them into a square. Instead, you end up with an ordinary rectangle! Those blasted things! If you just had a way to know, ' +
+// 'whether you're currently working in vain… Wait! That's it! You just have to check if your number of building blocks is a perfect square.
+//     Task
+//     Given an integral number, determine if it's a square number:
+//     In mathematics, a square number or perfect square is an integer that is the square of an integer; in other words, it is the product of some integer with itself.
+//     The tests will always use some integral number, so don't worry about that in dynamic typed languages.
+//     Examples
+//     -1  =>  false
+//     0  =>  true
+//     3  =>  false
+//     4  =>  true
+//     25  =>  true
+//     26  =>  false
+    let n = -1
+    console.log(Number.isInteger(n ** 0.5 % 2))
+}
 
+{
+    console.clear()
+    // An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a
+    // function that determines whether a string that contains only letters is an isogram.
+    // Assume the empty string is an isogram. Ignore letter case.
+    //
+    // isIsogram("Dermatoglyphics") == true
+    // isIsogram("aba") == false
+    // isIsogram("moOse") == false // -- ignore letter case
 
+    let str = 'Dermatoglyphics'
 
+    let mainStrInput = str.toLowerCase()
+    let arrStr = mainStrInput.split('')
+    let pointA = 0
+    let pointB = 0
+    let pointC = 0
+    let pointD = 0
+    let pointE = 0
+    let pointF = 0
+    let pointG = 0
+    let pointH = 0
+    let pointI = 0
+    let pointJ = 0
+    let pointK = 0
+    let pointL = 0
+    let pointM = 0
+    let pointN = 0
+    let pointO = 0
+    let pointP = 0
+    let pointQ = 0
+    let pointR = 0
+    let pointS = 0
+    let pointT = 0
+    let pointU = 0
+    let pointV = 0
+    let pointW = 0
+    let pointX = 0
+    let pointY = 0
+    let pointZ = 0
 
+    for (let i = 0; i < arrStr.length; i++) {
+        if ("a" === arrStr[i]) {
+            pointA++
+        } else if ("b" === arrStr[i]) {
+            pointB++
+        } else if ("c" === arrStr[i]) {
+            pointC++
+        }else if ("d" === arrStr[i]) {
+            pointD++
+        }else if ("e" === arrStr[i]) {
+            pointE++
+        }else if ("f" === arrStr[i]) {
+            pointF++
+        }else if ("g" === arrStr[i]) {
+            pointG++
+        }else if ("h" === arrStr[i]) {
+            pointH++
+        }else if ("i" === arrStr[i]) {
+            pointI++
+        }else if ("j" === arrStr[i]) {
+            pointJ++
+        }else if ("k" === arrStr[i]) {
+            pointK++
+        }else if ("l" === arrStr[i]) {
+            pointL++
+        }else if ("m" === arrStr[i]) {
+            pointM++
+        }else if ("n" === arrStr[i]) {
+            pointN++
+        }else if ("o" === arrStr[i]) {
+            pointO++
+        }else if ("p" === arrStr[i]) {
+            pointP++
+        }else if ("q" === arrStr[i]) {
+            pointQ++
+        }else if ("r" === arrStr[i]) {
+            pointR++
+        }else if ("s" === arrStr[i]) {
+            pointS++
+        }else if ("t" === arrStr[i]) {
+            pointT++
+        }else if ("u" === arrStr[i]) {
+            pointU++
+        }else if ("v" === arrStr[i]) {
+            pointV++
+        }else if ("w" === arrStr[i]) {
+            pointW++
+        }else if ("x" === arrStr[i]) {
+            pointX++
+        }else if ("y" === arrStr[i]) {
+            pointY++
+        }else if ("z" === arrStr[i]) {
+            pointZ++
+        }
 
+    }
+    if (pointA > 1 || pointB > 1 || pointC > 1 || pointD > 1 || pointE > 1 || pointF > 1 || pointG > 1 || pointH > 1 || pointI > 1 || pointJ > 1 || pointK > 1 || pointL > 1 || pointM > 1 || pointN > 1 || pointO > 1 || pointP > 1 || pointQ > 1 || pointR > 1 ||
+    pointS > 1 || pointT > 1 || pointU > 1 || pointV > 1 || pointW > 1 || pointX > 1 || pointY > 1 || pointZ > 1){
+        console.log(false)
+    }
+    else {
+        console.log(true)
+    }
+    // console.log(arrStr)
+    // let counter = 0
+    // let letters = []
+    // for (let i = 0; i < arrStr.length; i++){
+    //     if ('a' || "b" || "c" || "d" || "e" || "f" || "g" ||
+    //         "h" || "i" || "j" || "k" || "l" || "m" || "n" ||
+    //         "o" || "p" || "q" || "r" || "s" || "t" || "u" ||
+    //         "v" || "w" || "x" || "y" || "z" === arrStr[i]){
+    //         counter++
+    //
+    //     }
+    // }
+    // console.log(counter)
 
-// let sq = 121;//целый корень?
-// sq++
-// for (let i = 0; Number.isInteger(sq ** 0.5) !== true;i++){
-//     sq++
-// }
-// console.log(sq)
-
-
-
-
-
-
-
-
+    // let some = 'aba'.split('')
+    //
+    // console.log(some)
+    // for (let i = 0; i < some.length; i++){
+    //     if ("a" === some[i]){
+    //         pointA++
+    //     }
+    // }
+}
 
 
 
