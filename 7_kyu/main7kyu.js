@@ -571,6 +571,59 @@ console.log('work')
     //     }
     // }
 }
+{
+    console.clear()
+    // Complete the function that accepts a string parameter,
+    // and reverses each word in the string. All spaces in the string should be retained.
+    //
+    // Examples
+    // "This is an example!" ==> "sihT si na !elpmaxe"
+    // "double  spaces"      ==> "elbuod  secaps"
+
+    let str = "This is an example!"
+    let arrStr = str.split(' ').map(str => str.split('').reverse().join(''))
+    console.log(arrStr.join(' '))
+}
+{
+    console.clear()
+    let s = "abcdef"
+    let arrLetters = s.split('')
+    let newStr = []
+    console.log(arrLetters)
+    console.log(s)
+    let oddOrNot = 2
+
+    for (let i = 0; i < s.length; i++){
+        if (oddOrNot % 2 === 0){
+            oddOrNot++;
+            newStr.push(arrLetters[i].toUpperCase())
+
+        }
+        else {
+            newStr.push(arrLetters[i])
+            oddOrNot++
+        }
+    }
+
+    let oddOrNot2 = 1
+    let newStr2 = []
+
+    for (let i = 0; i < s.length; i++){
+        if (oddOrNot2 % 2 === 0){
+            oddOrNot2++;
+            newStr2.push(arrLetters[i].toUpperCase())
+
+        }
+        else {
+            newStr2.push(arrLetters[i])
+            oddOrNot2++
+        }
+    }
+    let result1 = newStr.join('')
+    let result2 = newStr2.join('')
+    let Mainesult =[result1,result2]
+    console.log(Mainesult)
+}
 
 
 
