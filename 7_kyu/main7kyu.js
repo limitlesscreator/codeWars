@@ -623,13 +623,48 @@ console.log('work')
     let result2 = newStr2.join('')
     let Mainesult =[result1,result2]
     console.log(Mainesult)
+
+}
+{
+    console.clear()
+    console.log('hello')
+    // Implement a method that accepts 3 integer values a, b, c.
+    // The method should return true if a triangle can be built with the sides of given length and false in any other case.
+    // (In this case, all triangles must have surface greater than 0 to be accepted).
+    let a = 2
+    let b = 2
+    let c = 6
+    if (a > 0 && b > 0 && c > 0){
+        if (a + b > c && b + c > a && a + c > b){
+            console.log('good!')
+        }
+        else {
+            console.log('false!')
+        }
+    }
+    else {
+        console.log('bad')
+    }
+
 }
 
+{
 
+    console.clear()
 
-
-
-
+    // Simple, given a string of words, return the length of the shortest word(s).
+    //
+    // String will never be empty and you do not need to account for different data types.
+    let s = 'bitcoin take over the world maybe who knows perhaps'
+    let j = s.split(' ')
+    let total = j[0].length
+    for (let i = 0; i < j.length; i++){
+        if (total > j[i].length){
+            total = j[i].length
+        }
+    }
+    console.log(total)
+}
 
 
 
