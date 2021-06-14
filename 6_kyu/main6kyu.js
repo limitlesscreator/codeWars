@@ -26,4 +26,31 @@ function solution(number){
     }
 }
 solution(10)
+console.clear()
 //FIRST KYU 6!!!!!!
+// --------------------------------------------------------------------------
+
+// Given an array of integers, find the one that appears an odd number of times.
+
+// There will always be only one integer that appears an odd number of times.
+
+function findOdd(A) {
+    let points = 0
+    let number = 0
+    for (let i = 0; i < A.length; i++){
+        debugger
+        number = A[i]
+        for (let i = 0; i < A.length; i++){
+            if (number === A[i]){
+                points++
+            }
+        }
+        if (points % 2 === 1 || points % 2 === -1){
+            console.log(number + ' итог')
+            break;
+        }
+        points = 0
+    }
+    console.log(1 % 2)
+}
+findOdd([ 1, 1, 2, -2, 5, 2, 4, 4, -1, -2, 5 ])
