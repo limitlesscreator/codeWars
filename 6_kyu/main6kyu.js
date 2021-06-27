@@ -200,37 +200,25 @@ clear()
     function duplicateCount(text) {
         let arr = text.toLowerCase().split('')
         result = 0
-        points = 0
-       for (let i = 0; i < arr.length; i++){
-           if (points === 0){
-               for (let j = 0; j < arr.length; j++){
 
-               }
-           }
-       }
+        let newArr = []
+        for (let i = 0; i < arr.length; i++) {
+            points = 0
+            for (let j = 0; j < arr.length; j++) {
+                if (arr[i] === arr[j] && newArr.indexOf(arr[i]) === -1) {
+                    points++
+                    if (points === 2) {
+                        newArr.push(arr[i])
+                        break;
+                    }
+                }
+            }
+        }
 
-        console.log(result - 1)
+        console.log(newArr.length)
     }
+
     duplicateCount('aabbcde') // 2
 }
 
 
-// function duplicateCount(text) {
-//     let arr = text.toLowerCase().split('')
-//     result = 0
-//     points = 0
-//     let checkLetter = []
-//     for (let i = 0; i < arr.length; i++){
-//         for (let j = 0; j < arr.length; j++){
-//             if (arr[i] === arr[j] && points < 1 && checkLetter[j] !== arr[i]){
-//                 result++
-//                 points++
-//                 checkLetter.push(arr[i])
-//                 break
-//             }
-//             else continue;
-//         }points = 0
-//     }
-//
-//     console.log(result - 1)
-// }
