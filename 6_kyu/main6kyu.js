@@ -254,5 +254,51 @@ clear()
 
     persistence(39) //3
 }
+clear()
+{
+    // ----------6-kyu----------6-kyu----------6-kyu----------6-kyu----------6-kyu----------
+    // Two tortoises named A and B must run a race. A starts with an average speed of 720 feet per hour. Young B knows she runs faster than A, and furthermore has not finished her cabbage.
+    //
+    // When she starts, at last, she can see that A has a 70 feet lead but B's speed is 850 feet per hour. How long will it take B to catch A?
+    //
+    // More generally: given two speeds v1 (A's speed, integer > 0) and v2 (B's speed, integer > 0) and a lead g (integer > 0) how long will it take B to catch A?
+    //
+    // The result will be an array [hour, min, sec] which is the time needed in hours, minutes and seconds (round down to the nearest second) or a string in some languages.
+    function race(v1, v2, g) {
+        let totalSeconds = 0
+        let hours = 0
+        let minutes = 0
+        let seconds = 0
+        let result = []
+
+        let spedFirstTortPerSec = v1 / 60 / 60
+        let spedSecondTortPerSec = v2 / 60 / 60
+
+        let distanceFirst = g
+        let distanceSecond = 0
+        if (v1 >= v2){return null}
+        else {
+            hours = Math.trunc(totalSeconds / 60 / 60)
+            minutes = Math.trunc((totalSeconds - (hours * 60 * 60)) / 60)
+            seconds = (totalSeconds - (hours * 60 * 60)) - (minutes * 60);
+            if (distanceFirst <= distanceSecond) return [hours,minutes,seconds-1];
+
+            while (distanceFirst > distanceSecond){
+                distanceFirst += spedFirstTortPerSec
+                distanceSecond += spedSecondTortPerSec
+                totalSeconds++
+            }
+            hours = Math.trunc(totalSeconds / 60 / 60)
+            minutes = Math.trunc((totalSeconds - (hours * 60 * 60)) / 60)
+            seconds = (totalSeconds - (hours * 60 * 60)) - (minutes * 60)
+            result = [hours,minutes,seconds-1]
+            return(result)
+        }
+    }
+    race(80, 91, 37) //[3, 21, 49]
+    race(720, 850, 70)
+    race(80, 91, 37)
+    race(80, 100, 40)
+}
 
 
