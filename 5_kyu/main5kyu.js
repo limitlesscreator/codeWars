@@ -35,3 +35,24 @@
     }
     pigIt('Pig latin is cool !') //igPay atinlay siay oolcay !'
 }
+console.clear()
+// ----------5-kyu----------5-kyu----------5-kyu----------5-kyu----------5-kyu----------
+// Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+
+const moveZeros = (arr) => {
+    let newArr =[]
+    let zeros = 0
+    for (let i = 0; i < arr.length; i++){
+        if (arr[i] === 0){
+            zeros++
+        }
+        else newArr.push(arr[i])
+    }
+    for (let j = 0; j < zeros; j++){
+        newArr.push(0)
+    }
+    console.log(newArr)
+}
+
+moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
+// i think it's easier than 5kyu, but it's 5 kyu))
