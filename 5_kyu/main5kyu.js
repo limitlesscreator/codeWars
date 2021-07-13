@@ -92,3 +92,9 @@ function scramble(str1, str2) {
 }
 scramble('rkqodlw','world')
 // finished
+{
+    function extractDomain(url) {
+        console.log(url.replace(/^(?:https?:\/\/)?(?:[^\/]+\.)?([^.\/]+\.[^.\/]+).*$/, "$1"))
+    }
+    extractDomain('http://google.co.jp')
+}

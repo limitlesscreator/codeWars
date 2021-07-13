@@ -276,14 +276,15 @@ clear()
 
         let distanceFirst = g
         let distanceSecond = 0
-        if (v1 >= v2){return null}
-        else {
+        if (v1 >= v2) {
+            return null
+        } else {
             hours = Math.trunc(totalSeconds / 60 / 60)
             minutes = Math.trunc((totalSeconds - (hours * 60 * 60)) / 60)
             seconds = (totalSeconds - (hours * 60 * 60)) - (minutes * 60);
-            if (distanceFirst <= distanceSecond) return [hours,minutes,seconds-1];
+            if (distanceFirst <= distanceSecond) return [hours, minutes, seconds - 1];
 
-            while (distanceFirst > distanceSecond){
+            while (distanceFirst > distanceSecond) {
                 distanceFirst += spedFirstTortPerSec
                 distanceSecond += spedSecondTortPerSec
                 totalSeconds++
@@ -291,14 +292,66 @@ clear()
             hours = Math.trunc(totalSeconds / 60 / 60)
             minutes = Math.trunc((totalSeconds - (hours * 60 * 60)) / 60)
             seconds = (totalSeconds - (hours * 60 * 60)) - (minutes * 60)
-            result = [hours,minutes,seconds-1]
-            return(result)
+            result = [hours, minutes, seconds - 1]
+            return (result)
         }
     }
+
     race(80, 91, 37) //[3, 21, 49]
     race(720, 850, 70)
     race(80, 91, 37)
     race(80, 100, 40)
 }
+// ----------6-kyu----------6-kyu----------6-kyu----------6-kyu----------6-kyu----------
+// You are given an array (which will have a length of at least 3, but could be very large) containing integers.
+//     The array is either entirely comprised of odd integers or entirely comprised of even integers except for a single integer N.
+//     Write a method that takes the array as an argument and returns this "outlier" N.
+//
+//     Examples
+//     [2, 4, 0, 100, 4, 11, 2602, 36]
+// Should return: 11 (the only odd number)
+//
+// [160, 3, 1719, 19, 11, 13, -21]
+// Should return: 160 (the only even number)
+function findOutlier(integers) {
+    let oddNumbers = 0
+    let evenNumbers = 0
+    let result = 0
+    for (let i = 0; i < integers.length; i++) {
+        if (integers[i] % 2 === 0) {
+            evenNumbers++
+        } else oddNumbers++
+    }
+    console.log(`odd: ${oddNumbers} and even: ${evenNumbers}`)
+    if (evenNumbers === 1) {
+        for (let j = 0; j < integers.length; j++) {
+            if (integers[j] % 2 === 0) {
+                result = integers[j]
+            }
+        }
+    } else {
+        for (let q = 0; q < integers.length; q++) {
+            if (integers[q] % 2 !== 0) {
+                result = integers[q]
+            }
+        }
+    }
+    return result
+}
 
+findOutlier([2, 6, 8, 10, 3])
 
+// the second cata is 6kyu, but i know that she's not looking like 6 kyu, anyway i decided to solve it
+// ----------6-kyu----------6-kyu----------6-kyu----------6-kyu----------6-kyu----------
+
+// Write a function that accepts an array of 10 integers (between 0 and 9), that returns a string of those numbers in the form of a phone number.
+//
+//     Example:
+// createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) // => returns "(123) 456-7890"
+// The returned format must be correct in order to complete this challenge.
+//     Don't forget the space after the closing parentheses!
+function createPhoneNumber(numbers) {
+    return `(${numbers[0]}${numbers[1]}${numbers[2]}) ${numbers[3]}${numbers[4]}${numbers[5]}-${numbers[6]}${numbers[7]}${numbers[8]}${numbers[9]}`
+}
+
+createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])//, "(123) 456-7890")
