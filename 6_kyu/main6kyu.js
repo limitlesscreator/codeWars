@@ -355,3 +355,76 @@ function createPhoneNumber(numbers) {
 }
 
 createPhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0])//, "(123) 456-7890")
+
+clear()
+// ----------6-kyu----------6-kyu----------6-kyu----------6-kyu----------6-kyu----------
+// Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+//
+//     For example:
+// uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
+// uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
+// uniqueInOrder([1,2,2,3,3])       == [1,2,3]
+
+let uniqueInOrder = function (iterable) {
+    let result = []
+    for (let i = 0; i < iterable.length; i++) {
+        if (result[result.length - 1] !== iterable[i]) {
+            result.push(iterable[i])
+        }
+    }
+    console.log(result)
+}
+uniqueInOrder('AAAABBBCCDAABBB')// ['A','B','C','D','A','B']
+clear()
+// ----------6-kyu----------6-kyu----------6-kyu----------6-kyu----------6-kyu----------
+// Build Tower
+// Build Tower by the following given argument:
+//     number of floors (integer and always greater than 0).
+//
+// Tower block is represented as *
+// for example, a tower of 3 floors looks like below
+//
+//     [
+//          '  *  ',
+//         ' *** ',
+//         '*****'
+//     ]
+// and a tower of 6 floors looks like below
+//
+//     [
+//         '     *     ',
+//         '    ***    ',
+//         '   *****   ',
+//         '  *******  ',
+//         ' ********* ',
+//         '***********'
+//     ]
+function towerBuilder(nFloors) {
+    let howManyStartPush = 1
+    let result = []
+    let lustStars = 1
+    let firstSpacesLeftRight = 0
+    for (let i = 1; i < nFloors; i++) {
+        lustStars += 2
+    }
+    firstSpacesLeftRight = (lustStars - 1)
+    for (let i = 0; i < nFloors; i++) {
+        console.log(firstSpacesLeftRight)
+        let newStrForPush = []
+        for (let j = 1; j <= firstSpacesLeftRight / 2; j++) {
+            newStrForPush.push(" ")
+        }
+        for (let q = 0; q < howManyStartPush; q++) {
+            newStrForPush.push("*")
+        }
+        for (let j = 1; j <= firstSpacesLeftRight / 2; j++) {
+            newStrForPush.push(" ")
+        }
+        howManyStartPush += 2
+        firstSpacesLeftRight -= 2
+        result.push(newStrForPush.join(""))
+    }
+    console.log(result)
+}
+
+towerBuilder(3)
